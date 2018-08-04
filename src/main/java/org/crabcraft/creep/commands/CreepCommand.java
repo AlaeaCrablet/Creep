@@ -20,12 +20,13 @@ public class CreepCommand implements CommandExecutor {
 
     @Override
     public CommandResult execute(CommandSource src, CommandContext args) throws CommandException {
-        Player player = args.<Player>getOne("player").orElse(null);
+        Player player;
 
-        if (player == null) {
-            // TODO: Get the caller's location as a fallback location.
-            logger.warn("No player argument supplied");
-            return CommandResult.empty();
+        if (args.<Player>getOne("player").orElse(null) == null) {
+            player = (Player) src;
+        }
+        else {
+            player = args.<Player>getOne("player").orElse(null);
         }
 
         Location<World> playerLocation = player.getLocation();
@@ -34,7 +35,7 @@ public class CreepCommand implements CommandExecutor {
         Entity creeper = world.createEntity(EntityTypes.CREEPER, playerLocation.getPosition());
         world.spawnEntity(creeper);
 
-        src.sendMessage((Text.of("A creeper has joined forces to aid you!")));
+        player.sendMessage((Text.of("A creeper has joined forces to aid you!")));
 
         return CommandResult.success();
 

@@ -17,7 +17,7 @@ import org.spongepowered.api.command.CommandManager;
         id = "creep",
         name = "Creep",
         description = "Spawns a creeper on your position. Why not?",
-        version = "1.0.0",
+        version = "1.0.1",
         authors = {
                 "Crablet"
         }

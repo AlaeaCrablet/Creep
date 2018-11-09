@@ -5,4 +5,4 @@ Fun Sponge plugin
 
 `creep [playername]`
 
-playername is an option argument, if no player is supplied, the command will be applied to the player who called it.
+playername is an optional argument, if no player is supplied, the command will be applied to the player who called it.

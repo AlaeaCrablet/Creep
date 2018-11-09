@@ -1,7 +1,7 @@
 # Creep
 Fun Sponge plugin
 
-## Plugin has one simple command
+**Plugin has one simple command**
 
 `creep [playername]`
 
